@@ -180,8 +180,9 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/50 text-text-base text-sm transition-colors"
-                    placeholder="Victoria Leonard "
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/50 text-text-base text-sm transition-all"
+                    placeholder="Victoria Leonard"
+                    autoComplete="name"
                   />
                 </div>
 
@@ -192,8 +193,9 @@ export default function Contact() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/50 text-text-base text-sm transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/50 text-text-base text-sm transition-all"
                     placeholder="customer@email.com"
+                    autoComplete="email"
                   />
                 </div>
               </div>
@@ -205,7 +207,7 @@ export default function Contact() {
                   id="subject"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/50 text-text-base text-sm transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/50 text-text-base text-sm transition-all"
                   placeholder="Inquiry about waist beads"
                 />
               </div>
@@ -218,7 +220,7 @@ export default function Contact() {
                   rows="4"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/50 text-text-base text-sm transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/50 text-text-base text-sm transition-all resize-none"
                   placeholder="Andika ujumbe wako hapa..."
                 ></textarea>
               </div>

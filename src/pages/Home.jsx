@@ -28,25 +28,25 @@ export default function Home({ setActivePage, setCategoryFilter }) {
       name: 'Skincare',
       label: 'Skincare Products',
       desc: 'Sera, creams, and toners for radiant, glowing skin.',
-      image: '/product1.jpeg',
+      image: '/product1.webp',
     },
     {
       name: 'Accessories',
       label: 'Beauty Accessories',
       desc: 'Layered gold chains, waist beads, and elegant urembo.',
-      image: '/product2.jpeg',
+      image: '/product2.webp',
     },
     {
       name: 'Body Care',
       label: 'Body Care',
       desc: 'Nourishing shea body lotions and rose shower gels.',
-      image: '/product3.jpeg',
+      image: '/product3.webp',
     },
     {
       name: 'Hair & Beauty',
       label: 'Hair & Beauty Products',
       desc: 'Premium rasta hair braiding and organic growth oils.',
-      image: '/product4.jpeg',
+      image: '/product4.webp',
     }
   ];
 
@@ -116,9 +116,13 @@ export default function Home({ setActivePage, setCategoryFilter }) {
             {/* Main Picture Frame with Gold Highlights */}
             <div className="relative p-3 bg-card-bg border-4 border-gold rounded-2xl shadow-2xl overflow-hidden max-w-md md:max-w-lg transform hover:scale-[1.02] transition-transform duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&auto=format&fit=crop&q=80" 
                 alt="Vee Cosmetics Beauty Lifestyle" 
-                className="rounded-lg object-cover w-full h-[450px]"
+                width="500"
+                height="450"
+                loading="eager"
+                fetchpriority="high"
+                className="rounded-lg object-cover w-full h-[300px] sm:h-[400px] md:h-[450px] aspect-[10/9]"
               />
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-lg glass border border-gold/20 text-center">
                 <p className="font-serif text-lg font-bold text-text-base">Embrace Your Glow</p>
@@ -147,7 +151,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"
         >
           {categories.map((cat, index) => (
             <motion.div
@@ -160,25 +164,28 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                 <img 
                   src={cat.image} 
                   alt={cat.label} 
+                  width="300"
+                  height="300"
+                  loading="lazy"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                  <span className="text-white text-sm font-semibold uppercase tracking-wider bg-gold/90 px-4 py-2 rounded-full flex items-center gap-1.5 shadow-md">
+                  <span className="text-white text-xs sm:text-sm font-semibold uppercase tracking-wider bg-gold/90 px-4 py-2 rounded-full flex items-center gap-1.5 shadow-md">
                     <span>View More</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </div>
-              <div className="p-6 flex-grow flex flex-col justify-between text-left">
+              <div className="p-4 sm:p-6 flex-grow flex flex-col justify-between text-left">
                 <div className="space-y-2">
-                  <h3 className="font-serif text-lg font-bold text-text-base group-hover:text-gold transition-colors duration-200">
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-text-base group-hover:text-gold transition-colors duration-200">
                     {cat.label}
                   </h3>
-                  <p className="text-sm text-text-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-text-muted leading-relaxed line-clamp-3">
                     {cat.desc}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-border-base/40 text-xs font-semibold text-rose-primary uppercase tracking-wider flex items-center gap-1 group-hover:text-rose-hover">
+                <div className="mt-4 pt-3 border-t border-border-base/40 text-[10px] sm:text-xs font-semibold text-rose-primary uppercase tracking-wider flex items-center gap-1 group-hover:text-rose-hover">
                   <span>Shop Category</span>
                   <ArrowRight className="h-3 w-3 transform group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -201,40 +208,40 @@ export default function Home({ setActivePage, setCategoryFilter }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               {
-                icon: <ShieldCheck className="h-8 w-8 text-gold" />,
+                icon: <ShieldCheck className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />,
                 title: "100% Original Products",
                 desc: "Bidhaa zetu zote zinaagizwa kutoka kwa wasambazaji waaminifu. Hatuna bidhaa feki."
               },
               {
-                icon: <Award className="h-8 w-8 text-gold" />,
+                icon: <Award className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />,
                 title: "Trusted Beauty Brand",
                 desc: "Tunajenga uaminifu wa kudumu na wateja wetu kupitia ushauri sahihi na uaminifu mkuu."
               },
               {
-                icon: <Star className="h-8 w-8 text-gold" />,
+                icon: <Star className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />,
                 title: "Affordable Pricing",
                 desc: "Urembo wa kifahari hauhitaji gharama kubwa. Bei zetu ni rafiki na zenye ushindani sokoni."
               },
               {
-                icon: <Heart className="h-8 w-8 text-gold" />,
+                icon: <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />,
                 title: "Excellent Service",
                 desc: "Tupo tayari kukusikiliza na kukushauri bidhaa sahihi zinazoendana na ngozi au nywele zako."
               }
             ].map((feature, index) => (
               <div 
                 key={index}
-                className="bg-card-bg p-8 rounded-2xl border border-border-base hover:border-gold/30 shadow-sm text-center space-y-4 hover:shadow-md transition-all duration-300"
+                className="bg-card-bg p-4 sm:p-8 rounded-2xl border border-border-base hover:border-gold/30 shadow-sm text-center space-y-3 sm:space-y-4 hover:shadow-md transition-all duration-300"
               >
-                <div className="inline-flex p-3 rounded-full bg-rose-light dark:bg-rose-light/10 text-gold mb-2">
+                <div className="inline-flex p-2.5 sm:p-3 rounded-full bg-rose-light dark:bg-rose-light/10 text-gold mb-1 sm:mb-2">
                   {feature.icon}
                 </div>
-                <h3 className="font-serif text-lg font-bold text-text-base">
+                <h3 className="font-serif text-sm sm:text-lg font-bold text-text-base">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-text-muted leading-relaxed">
+                <p className="text-xs sm:text-sm text-text-muted leading-relaxed line-clamp-4">
                   {feature.desc}
                 </p>
               </div>
@@ -251,9 +258,12 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative p-2 bg-card-bg border-2 border-gold rounded-2xl shadow-xl overflow-hidden max-w-sm">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=450&auto=format&fit=crop&q=80" 
                 alt="Founder of Vee Cosmetics" 
-                className="rounded-xl object-cover w-full h-[400px]"
+                width="400"
+                height="400"
+                loading="lazy"
+                className="rounded-xl object-cover w-full h-[300px] sm:h-[350px] md:h-[400px] aspect-square"
               />
               <div className="absolute top-4 right-4 bg-gold text-white text-xs uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full shadow-md">
                 Meet the Founder
@@ -322,7 +332,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {tips.map((tip) => (
               <div 
                 key={tip.id}
@@ -332,7 +342,10 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                   <img 
                     src={tip.image} 
                     alt={tip.title} 
-                    className="w-full h-full object-cover"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                    className="w-full h-full object-cover aspect-[16/10]"
                   />
                   <span className="absolute top-4 left-4 bg-gold/90 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                     {tip.category}

@@ -116,7 +116,7 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
       name: '',
       category: 'Skincare',
       price: '',
-      image: '/product1.jpeg',
+      image: '/product1.webp',
       description: '',
       featuresText: ''
     });
@@ -148,16 +148,17 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
           </div>
 
           <form onSubmit={handlePinSubmit} className="space-y-4">
-            <input
+             <input
               type="password"
               maxLength="6"
               placeholder="Weka PIN yako (e.g. 1234)"
               value={pin}
               onChange={(e) => setPin(e.target.value)}
-              className={`w-full text-center px-4 py-3 rounded-xl border focus:outline-none bg-bg-base/50 text-text-base font-bold tracking-widest text-lg transition-colors ${pinError
-                ? 'border-red-500 focus:border-red-500 animate-shake'
-                : 'border-border-base focus:border-gold'
+              className={`w-full text-center px-4 py-3 rounded-xl border focus:outline-none focus-visible:ring-2 bg-bg-base/50 text-text-base font-bold tracking-widest text-lg transition-all ${pinError
+                ? 'border-red-500 focus:border-red-500 focus-visible:ring-red-500 animate-shake'
+                : 'border-border-base focus:border-gold focus-visible:ring-gold'
                 }`}
+              autoComplete="current-password"
               autoFocus
             />
 
@@ -243,14 +244,14 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                 {/* Product Name */}
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold uppercase tracking-wider text-text-base">Jina la Bidhaa *</label>
-                  <input
+                   <input
                     type="text"
                     name="name"
                     required
                     placeholder="e.g. Luxury Shea Cream"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all"
                   />
                 </div>
 
@@ -260,12 +261,12 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                   {/* Category Selection */}
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold uppercase tracking-wider text-text-base">Kundi (Category) *</label>
-                    <select
-                      name="category"
-                      value={formData.category}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors cursor-pointer"
-                    >
+                     <select
+                       name="category"
+                       value={formData.category}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all cursor-pointer"
+                     >
                       <option value="Skincare">Skincare</option>
                       <option value="Accessories">Accessories</option>
                       <option value="Body Care">Body Care</option>
@@ -276,41 +277,41 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                   {/* Price */}
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold uppercase tracking-wider text-text-base">Bei ya TSh *</label>
-                    <input
-                      type="text"
-                      name="price"
-                      required
-                      placeholder="e.g. 35,000"
-                      value={formData.price}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors"
-                    />
+                     <input
+                       type="text"
+                       name="price"
+                       required
+                       placeholder="e.g. 35,000"
+                       value={formData.price}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all"
+                     />
                   </div>
 
                 </div>
 
                 {/* Local Image Path */}
-                <div className="space-y-1.5">
+                 <div className="space-y-1.5">
                   <div className="flex justify-between items-center">
                     <label className="text-xs font-bold uppercase tracking-wider text-text-base">Jina la Picha (Public Image File) *</label>
-                    <span className="text-[10px] text-text-muted font-mono bg-bg-base px-2 py-0.5 rounded">e.g. /product17.jpeg</span>
+                    <span className="text-[10px] text-text-muted font-mono bg-bg-base px-2 py-0.5 rounded">e.g. /product17.webp</span>
                   </div>
                   <input
                     type="text"
                     name="image"
                     required
-                    placeholder="e.g. /product17.jpeg"
+                    placeholder="e.g. /product17.webp"
                     value={formData.image}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors font-mono"
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all font-mono"
                   />
                   <p className="text-[10px] text-text-muted leading-relaxed">
-                    Weka picha yako kwenye folda ya <strong>public/</strong> na uandike jina lake hapa (k.m. <code>/product17.jpeg</code> au <code>/perfume1.jpeg</code>).
+                    Weka picha yako kwenye folda ya <strong>public/</strong> na uandike jina lake hapa (k.m. <code>/product17.webp</code> au <code>/perfume1.webp</code>).
                   </p>
                 </div>
 
                 {/* Description */}
-                <div className="space-y-1.5">
+                 <div className="space-y-1.5">
                   <label className="text-xs font-bold uppercase tracking-wider text-text-base">Maelezo ya Bidhaa (Description) *</label>
                   <textarea
                     name="description"
@@ -319,12 +320,12 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                     placeholder="Andika maelezo ya kina ya bidhaa hii..."
                     value={formData.description}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all resize-none"
                   ></textarea>
                 </div>
 
                 {/* Highlights / Features */}
-                <div className="space-y-1.5">
+                 <div className="space-y-1.5">
                   <label className="text-xs font-bold uppercase tracking-wider text-text-base">Sifa za Bidhaa (comma-separated highlights)</label>
                   <textarea
                     name="featuresText"
@@ -332,7 +333,7 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                     placeholder="e.g. Deep hydration, 100% Organic, Hypoallergenic"
                     value={formData.featuresText}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none bg-bg-base/40 text-text-base text-sm transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-border-base focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-bg-base/40 text-text-base text-sm transition-all resize-none"
                   ></textarea>
                 </div>
 
@@ -379,14 +380,14 @@ export default function Admin({ productsList, saveProducts, setActivePage }) {
                   >
                     {/* Left: Thumbnail & basic info */}
                     <div className="flex items-center space-x-4">
-                      <img
-                        src={product.image || '/product1.jpeg'}
-                        alt={product.name}
-                        className="w-16 h-16 rounded-xl object-cover border border-border-base flex-shrink-0"
-                        onError={(e) => {
-                          e.target.src = '/product1.jpeg'; // fallback if path doesn't load
-                        }}
-                      />
+                       <img
+                         src={product.image || '/product1.webp'}
+                         alt={product.name}
+                         className="w-16 h-16 rounded-xl object-cover border border-border-base flex-shrink-0"
+                         onError={(e) => {
+                           e.target.src = '/product1.webp'; // fallback if path doesn't load
+                         }}
+                       />
                       <div className="space-y-1">
                         <span className="text-[10px] font-bold text-gold uppercase tracking-wider bg-gold/15 dark:bg-gold/10 px-2 py-0.5 rounded">
                           {product.category}

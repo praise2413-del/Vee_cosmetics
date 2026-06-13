@@ -12,9 +12,28 @@
   --color-rose-light: var(--color-rose-light);
   --color-rose-primary: var(--color-rose-primary);
   --color-rose-hover: var(--color-rose-hover);
-  
+
   --font-serif: "Playfair Display", serif;
   --font-sans: "Poppins", sans-serif;
+
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-shake: shake 0.4s ease-in-out;
+  --animate-slide-in: slide-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+  @keyframes slide-in {
+    from { transform: translateY(12px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 }
 
 :root {
@@ -98,4 +117,13 @@ body {
   background: linear-gradient(135deg, #F0D37B 0%, #E5C158 50%, #FFF4D0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Hide scrollbar utility for mobile swipable list */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

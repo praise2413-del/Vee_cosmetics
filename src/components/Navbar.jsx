@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Sun, Moon, Menu, X, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar({ activePage, setActivePage, isDark, setIsDark }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,18 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const navItems = [
     { name: 'Home', id: 'home' },
@@ -37,15 +50,16 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick('home')}>
             <img 
-              src={isDark ? "/logo1.jpeg" : "/logo2.jpeg"} 
+              src={isDark ? "/logo1.webp" : "/logo2.webp"} 
               alt="Vee Cosmetics Logo" 
-              className="h-32 md:h-36 w-auto rounded-xl object-contain transition-all duration-300 border-2 border-gold/20 shadow-md hover:scale-[1.02]"
+              width="56"
+              height="56"
+              className="h-14 w-14 rounded-xl object-contain transition-all duration-300 border-2 border-gold/20 shadow-md hover:scale-[1.02]"
             />
-            <span className="font-serif text-2xl md:text-3xl font-bold tracking-wide text-text-base transition-colors duration-300">
+            <span className="font-serif text-xl md:text-2xl font-bold tracking-wide text-text-base transition-colors duration-300">
               VEE <span className="gold-gradient">COSMETICS</span>
             </span>
           </div>
-
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
@@ -97,26 +111,77 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
-      {isOpen && (
-        <div className="md:hidden glass border-t border-border-base/50 animate-fade-in">
-          <div className="px-2 pt-4 pb-6 space-y-2 sm:px-3 flex flex-col items-center">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full text-center px-4 py-3 rounded-lg text-base font-medium uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                  activePage === item.id 
-                    ? 'bg-rose-light text-gold font-semibold' 
-                    : 'text-text-base/80 hover:bg-rose-light/50 hover:text-text-base'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Premium Mobile Navigation Side Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Dark Blur Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+            />
+
+            {/* Slide-over Drawer Panel */}
+            <motion.div 
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-card-bg border-l border-border-base/50 z-50 p-6 flex flex-col justify-between shadow-2xl md:hidden"
+            >
+              <div className="space-y-6">
+                {/* Header of Drawer */}
+                <div className="flex items-center justify-between pb-4 border-b border-border-base/40">
+                  <div className="flex items-center space-x-2">
+                    <img 
+                      src={isDark ? "/logo1.webp" : "/logo2.webp"} 
+                      alt="Vee Cosmetics Logo" 
+                      width="40"
+                      height="40"
+                      className="h-10 w-10 rounded-lg object-contain"
+                    />
+                    <span className="font-serif text-lg font-bold">Vee Menu</span>
+                  </div>
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 rounded-full hover:bg-rose-light/20 text-text-base"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                {/* Navigation Links inside Drawer */}
+                <div className="flex flex-col space-y-2">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item.id)}
+                      className={`w-full text-left px-4 py-3.5 rounded-xl text-base font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-between ${
+                        activePage === item.id 
+                          ? 'bg-rose-light/50 dark:bg-rose-light/10 text-gold font-bold border-l-4 border-gold' 
+                          : 'text-text-base/80 hover:bg-rose-light/30 hover:text-text-base'
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      <ArrowRight className={`h-4 w-4 text-gold/60 transition-transform ${activePage === item.id ? 'translate-x-1' : ''}`} />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Brand Philosophy info */}
+              <div className="pt-6 border-t border-border-base/40 text-center space-y-2">
+                <p className="font-serif text-sm font-bold text-text-base">VEE COSMETICS</p>
+                <p className="text-[10px] text-text-muted">Banana, Dar es Salaam • 0659130030</p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -5,7 +5,7 @@ export const products = [
     category: "Skincare",
     price: "45,000",
     description: "Formulated with hyaluronic acid and rose extract to give your skin a natural, dewy glow. Ideal for all skin types.",
-    image: "/product1.jpeg",
+    image: "/product1.webp",
     features: ["Deep hydration", "Brightening formula", "Infused with organic rose water"]
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     category: "Accessories",
     price: "35,000",
     description: "Elegant and minimal layered golden neck chain. Water-resistant and designed to elevate any outfit.",
-    image: "/product2.jpeg",
+    image: "/product2.webp",
     features: ["18k gold plated", "Hypoallergenic", "Adjustable length"]
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     category: "Body Care",
     price: "30,000",
     description: "Infused with Tanzanian organic shea butter and sweet almond oil, providing 24-hour moisture with a subtle shimmer.",
-    image: "/product3.jpeg",
+    image: "/product3.webp",
     features: ["24-hour hydration", "Rich cocoa butter fragrance", "Silky gold finish"]
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     category: "Hair & Beauty",
     price: "15,000",
     description: "High-quality, lightweight, itch-free rasta braiding hair. Soft texture that is easy to style and holds curls beautifully.",
-    image: "/product4.jpeg",
+    image: "/product4.webp",
     features: ["Tangle-free", "Hot water set friendly", "Lightweight feel"]
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     category: "Skincare",
     price: "40,000",
     description: "A rich, velvety cream that promotes overnight cell renewal. Wake up with plump, refreshed, and hydrated skin.",
-    image: "/product5.jpeg",
+    image: "/product5.webp",
     features: ["Overnight repair", "Anti-inflammatory jasmine", "Rich velvety texture"]
   },
   {
@@ -50,7 +50,7 @@ export const products = [
     category: "Accessories",
     price: "10,000",
     description: "Traditionally made waist beads with high-quality gold and pink glass seed beads, symbolizing elegance and femininity.",
-    image: "/product6.jpeg",
+    image: "/product6.webp",
     features: ["Handmade in Tanzania", "Customizable size", "Durable thread layout"]
   },
   {
@@ -59,7 +59,7 @@ export const products = [
     category: "Body Care",
     price: "25,000",
     description: "A gentle body cleanser with natural rose water that cleanses without drying, leaving your skin soft and scented like fresh roses.",
-    image: "/product7.jpeg",
+    image: "/product7.webp",
     features: ["pH balanced", "Sulfate-free", "Infused with pure rose oils"]
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     category: "Hair & Beauty",
     price: "28,000",
     description: "Premium hair oil containing pure argan and rosemary oil to nourish the scalp, strengthen roots, and promote hair growth.",
-    image: "/product8.jpeg",
+    image: "/product8.webp",
     features: ["100% natural", "Prevents breakage", "Suitable for all hair textures"]
   }
 ];

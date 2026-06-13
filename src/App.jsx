@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Collections from './pages/Collections';
-import Gallery from './pages/Gallery';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Admin from './pages/Admin';
 import { products } from './data/products';
+
+// Dynamic page components loading (code-splitting)
+const Home = lazy(() => import('./pages/Home'));
+const Collections = lazy(() => import('./pages/Collections'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Admin = lazy(() => import('./pages/Admin'));
+
+// Premium, elegant loading spinner fallback
+const PageLoader = () => (
+  <div className="min-h-[60vh] flex items-center justify-center bg-bg-base">
+    <div className="w-10 h-10 border-2 border-gold border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 function App() {
   const [activePage, setActivePage] = useState('home');

@@ -11,11 +11,11 @@ export default function Footer({ setActivePage, isDark }) {
 
   return (
     <footer className="bg-rose-light/40 dark:bg-rose-light/5 border-t border-border-base transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
           {/* Brand Philosophy column */}
-          <div className="space-y-4 md:col-span-1">
+          <div className="space-y-4">
             <div className="flex flex-col space-y-3 items-start">
               {/* <img 
                 src={isDark ? "/logo1.jpeg" : "/logo2.jpeg"} 
@@ -34,7 +34,7 @@ export default function Footer({ setActivePage, isDark }) {
                 href="https://wa.me/255659130030"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
+                className="p-3 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
                 title="Chat with us on WhatsApp"
               >
                 <MessageSquare className="h-5 w-5" />
@@ -43,7 +43,7 @@ export default function Footer({ setActivePage, isDark }) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
+                className="p-3 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
                 title="Follow us on Instagram"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -54,8 +54,7 @@ export default function Footer({ setActivePage, isDark }) {
               </a>
               <a
                 href="tel:+255659130030"
-
-                className="p-2 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
+                className="p-3 rounded-full bg-card-bg shadow-sm text-gold hover:bg-rose-primary hover:text-white transition-all duration-300"
                 title="Call Vee Cosmetics"
               >
                 <Phone className="h-5 w-5" />
@@ -68,7 +67,7 @@ export default function Footer({ setActivePage, isDark }) {
             <h4 className="font-serif text-lg font-semibold text-text-base border-b border-gold/25 pb-2">
               Navigation
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {[
                 { name: 'Home', id: 'home' },
                 { name: 'Collections', id: 'collections' },
@@ -79,7 +78,7 @@ export default function Footer({ setActivePage, isDark }) {
                 <li key={link.id}>
                   <button
                     onClick={() => handleNavClick(link.id)}
-                    className="text-sm text-text-muted hover:text-gold cursor-pointer transition-colors duration-200"
+                    className="w-full text-left py-1.5 text-sm text-text-muted hover:text-gold cursor-pointer transition-colors duration-200"
                   >
                     {link.name}
                   </button>
@@ -93,12 +92,12 @@ export default function Footer({ setActivePage, isDark }) {
             <h4 className="font-serif text-lg font-semibold text-text-base border-b border-gold/25 pb-2">
               Categories
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {['Skincare', 'Accessories', 'Body Care', 'Hair & Beauty'].map((cat) => (
                 <li key={cat}>
                   <button
                     onClick={() => handleNavClick('collections')}
-                    className="text-sm text-text-muted hover:text-gold cursor-pointer transition-colors duration-200"
+                    className="w-full text-left py-1.5 text-sm text-text-muted hover:text-gold cursor-pointer transition-colors duration-200"
                   >
                     {cat}
                   </button>
@@ -127,7 +126,7 @@ export default function Footer({ setActivePage, isDark }) {
               </li>
               <li className="flex items-center space-x-3 text-sm text-text-muted">
                 <Sparkles className="h-5 w-5 text-gold flex-shrink-0" />
-                <span>Open: Mon - Sat(08:30am-10:30pm)</span>
+                <span>Open: Mon - Sat (08:30am - 10:30pm)</span>
               </li>
             </ul>
           </div>

@@ -44,12 +44,12 @@ export default function Gallery() {
         </div>
 
         {/* Gallery Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex overflow-x-auto no-scrollbar md:flex-wrap md:justify-center gap-3 mb-12 pb-3 md:pb-0 px-2 -mx-4 md:mx-0 snap-x snap-mandatory scroll-smooth">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer flex-shrink-0 snap-start ${
                 filter === cat
                   ? 'bg-gold text-white shadow-md'
                   : 'bg-card-bg text-text-base border border-border-base hover:border-gold/30 hover:bg-rose-light/20'
@@ -63,7 +63,7 @@ export default function Gallery() {
         {/* Photos Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (
@@ -80,23 +80,25 @@ export default function Gallery() {
                 <img 
                   src={item.image} 
                   alt={item.title} 
+                  width="300"
+                  height="375"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 
                 {/* Hover overlay panel */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6 text-left">
                   <div className="space-y-1.5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-[10px] font-bold text-gold tracking-widest uppercase bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-md inline-block">
+                    <span className="text-[9px] sm:text-[10px] font-bold text-gold tracking-widest uppercase bg-gold/15 border border-gold/30 px-2 py-0.5 rounded-md inline-block">
                       {item.category}
                     </span>
-                    <h3 className="font-serif text-lg font-bold text-white">
+                    <h3 className="font-serif text-sm sm:text-lg font-bold text-white line-clamp-1">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-white/80 line-clamp-2 leading-relaxed">
+                    <p className="text-[10px] sm:text-xs text-white/80 line-clamp-2 leading-relaxed">
                       {item.description}
                     </p>
-                    <div className="pt-2 text-[10px] text-gold uppercase tracking-wider font-semibold flex items-center gap-1">
+                    <div className="pt-2 text-[9px] sm:text-[10px] text-gold uppercase tracking-wider font-semibold flex items-center gap-1">
                       <Maximize2 className="h-3 w-3" />
                       <span>View Fullscreen</span>
                     </div>
