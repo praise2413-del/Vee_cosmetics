@@ -46,15 +46,15 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
     <nav className="sticky top-0 z-50 glass transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2.5 md:py-3.5">
-          
+
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick('home')}>
-            <img 
-              src={isDark ? "/logo1.webp" : "/logo2.webp"} 
-              alt="Vee Cosmetics Logo" 
+            <img
+              src={isDark ? "/logo1.webp" : "/logo2.webp"}
+              alt="Vee Cosmetics Logo"
               width="56"
               height="56"
-              className="h-14 w-14 rounded-xl object-contain transition-all duration-300 border-2 border-gold/20 shadow-md hover:scale-[1.02]"
+              className="h-30 w-30 rounded-xl object-contain transition-all duration-300 border-2 border-gold/20 shadow-md hover:scale-[1.03]"
             />
             <span className="font-serif text-xl md:text-2xl font-bold tracking-wide text-text-base transition-colors duration-300">
               VEE <span className="gold-gradient">COSMETICS</span>
@@ -67,11 +67,10 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-sm font-medium tracking-wide uppercase transition-all duration-200 hover:text-gold cursor-pointer relative py-2 ${
-                  activePage === item.id 
-                    ? 'text-gold' 
-                    : 'text-text-base/80 hover:text-text-base'
-                }`}
+                className={`text-sm font-medium tracking-wide uppercase transition-all duration-200 hover:text-gold cursor-pointer relative py-2 ${activePage === item.id
+                  ? 'text-gold'
+                  : 'text-text-base/80 hover:text-text-base'
+                  }`}
               >
                 {item.name}
                 {activePage === item.id && (
@@ -83,7 +82,7 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
 
           {/* Right Controls: Theme Toggle + Hamburger */}
           <div className="flex items-center space-x-4">
-            
+
             {/* Theme Toggle Button */}
             <button
               onClick={() => setIsDark(!isDark)}
@@ -116,7 +115,7 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
         {isOpen && (
           <>
             {/* Dark Blur Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -125,7 +124,7 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
             />
 
             {/* Slide-over Drawer Panel */}
-            <motion.div 
+            <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -136,16 +135,16 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
                 {/* Header of Drawer */}
                 <div className="flex items-center justify-between pb-4 border-b border-border-base/40">
                   <div className="flex items-center space-x-2">
-                    <img 
-                      src={isDark ? "/logo1.webp" : "/logo2.webp"} 
-                      alt="Vee Cosmetics Logo" 
+                    <img
+                      src={isDark ? "/logo1.webp" : "/logo2.webp"}
+                      alt="Vee Cosmetics Logo"
                       width="40"
                       height="40"
                       className="h-10 w-10 rounded-lg object-contain"
                     />
                     <span className="font-serif text-lg font-bold">Vee Menu</span>
                   </div>
-                  <button 
+                  <button
                     onClick={() => setIsOpen(false)}
                     className="p-2 rounded-full hover:bg-rose-light/20 text-text-base"
                     aria-label="Close menu"
@@ -160,11 +159,10 @@ export default function Navbar({ activePage, setActivePage, isDark, setIsDark })
                     <button
                       key={item.id}
                       onClick={() => handleNavClick(item.id)}
-                      className={`w-full text-left px-4 py-3.5 rounded-xl text-base font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-between ${
-                        activePage === item.id 
-                          ? 'bg-rose-light/50 dark:bg-rose-light/10 text-gold font-bold border-l-4 border-gold' 
-                          : 'text-text-base/80 hover:bg-rose-light/30 hover:text-text-base'
-                      }`}
+                      className={`w-full text-left px-4 py-3.5 rounded-xl text-base font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-between ${activePage === item.id
+                        ? 'bg-rose-light/50 dark:bg-rose-light/10 text-gold font-bold border-l-4 border-gold'
+                        : 'text-text-base/80 hover:bg-rose-light/30 hover:text-text-base'
+                        }`}
                     >
                       <span>{item.name}</span>
                       <ArrowRight className={`h-4 w-4 text-gold/60 transition-transform ${activePage === item.id ? 'translate-x-1' : ''}`} />
