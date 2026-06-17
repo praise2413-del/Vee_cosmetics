@@ -24,14 +24,14 @@ export default function About() {
 
         {/* 2. Brand Story / Founder Bio split */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Text panel */}
           <div className="space-y-6 text-left">
             <h2 className="font-serif text-3xl font-bold text-text-base">
               Kutoka Banana Hadi Kuwa <span className="gold-gradient">Premium Destination</span>
             </h2>
             <div className="h-[2px] w-16 bg-gold rounded-full"></div>
-            
+
             <p className="text-sm md:text-base text-text-muted leading-relaxed">
               Vee Cosmetics ilianza na ndoto moja rahisi: **Kupambana na vipodozi feki vinavyoharibu ngozi za wanawake wa Tanzania.** Mwanzilishi wetu, Victoria (Vee), aligundua kuwa wanawake wengi wanakabiliwa na changamoto za ngozi kwa sababu ya kukosa maarifa sahihi na kutumia bidhaa zisizo salama.
             </p>
@@ -47,9 +47,9 @@ export default function About() {
           <div className="flex justify-center">
             <div className="relative p-3 bg-card-bg border-4 border-gold rounded-3xl shadow-xl max-w-md overflow-hidden group">
               <div className="absolute -inset-2 bg-gradient-to-r from-rose-primary/20 to-gold/20 blur-xl opacity-75"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop&q=80" 
-                alt="Vee Cosmetics Premium Boutique" 
+              <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop&q=80"
+                alt="Vee Cosmetics Premium Boutique"
                 className="rounded-2xl object-cover w-full h-[350px] transform group-hover:scale-102 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
@@ -65,7 +65,7 @@ export default function About() {
               Core <span className="gold-gradient">Values</span>
             </h2>
             <div className="h-[2px] w-16 bg-gold mx-auto rounded-full"></div>
-            <p className="text-text-muted text-sm">Nguzo nne zinazotufanya kuwa chaguo la kwanza la wateja wetu.</p>
+            <p className="text-text-muted text-sm">Nguzo zetu zinazotufanya kuwa chaguo la kwanza la wateja wetu.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -86,7 +86,7 @@ export default function About() {
                 desc: "Kuanzia cheni zetu za dhahabu zisizopauka hadi rasta laini na sera za skincare zenye matokeo ya kudumu."
               }
             ].map((value, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-card-bg p-8 rounded-2xl border border-border-base shadow-sm hover:border-gold/30 space-y-4 text-center transition-all duration-300 hover:shadow-md"
               >
@@ -114,15 +114,15 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tips.map((tip) => (
-              <div 
+              <div
                 key={tip.id}
                 onClick={() => setSelectedTip(tip)}
                 className="bg-card-bg rounded-2xl overflow-hidden border border-border-base shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer text-left flex flex-col justify-between h-full"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-rose-light/20">
-                  <img 
-                    src={tip.image} 
-                    alt={tip.title} 
+                  <img
+                    src={tip.image}
+                    alt={tip.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -159,7 +159,7 @@ export default function About() {
               className="bg-card-bg max-w-2xl w-full rounded-3xl overflow-hidden border border-border-base shadow-2xl relative"
             >
               {/* Close Button */}
-              <button 
+              <button
                 onClick={() => setSelectedTip(null)}
                 className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors cursor-pointer z-10"
               >
@@ -167,9 +167,9 @@ export default function About() {
               </button>
 
               <div className="aspect-[16/9] w-full overflow-hidden bg-rose-light/20 relative">
-                <img 
-                  src={selectedTip.image} 
-                  alt={selectedTip.title} 
+                <img
+                  src={selectedTip.image}
+                  alt={selectedTip.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
