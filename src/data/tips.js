@@ -14,7 +14,7 @@ export const tips = [
     category: "Hair Care",
     readTime: "4 min read",
     summary: "Braids are beautiful, but protective styling requires care. Learn how to maintain your scalp moisture and keep frizz away.",
-    image: "https://images.unsplash.com/photo-1605497746444-ac9dbd39f69c?w=600&auto=format&fit=crop&q=80",
+    image: "/braidtips.jpeg",
     content: "Keep your braids looking sleek by wrapping your hair in a silk satin bonnet at night. To prevent scalp itching, apply a diluted mixture of natural oils (like tea tree or argan hair oil) directly to your scalp twice a week, and spray a lightweight leave-in conditioner to keep the braids hydrated."
   },
   {
