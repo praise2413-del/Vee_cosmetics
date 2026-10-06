@@ -33,10 +33,10 @@ export default function About() {
             <div className="h-[2px] w-16 bg-gold rounded-full"></div>
 
             <p className="text-sm md:text-base text-text-muted leading-relaxed">
-              Vee Cosmetics ilianza na ndoto moja rahisi: **Kupambana na vipodozi feki vinavyoharibu ngozi za wanawake wa Tanzania.** Mwanzilishi wetu, Victoria (Vee), aligundua kuwa wanawake wengi wanakabiliwa na changamoto za ngozi kwa sababu ya kukosa maarifa sahihi na kutumia bidhaa zisizo salama.
+              Vee Cosmetics ilianza na ndoto moja rahisi: Kupambana na vipodozi feki vinavyoharibu ngozi za wanawake wa Tanzania. Mwanzilishi wetu, Victoria (Vee), aligundua kuwa wanawake wengi wanakabiliwa na changamoto za ngozi kwa sababu ya kukosa maarifa sahihi na kutumia bidhaa zisizo salama.
             </p>
             <p className="text-sm md:text-base text-text-muted leading-relaxed">
-              Kwa kuweka mkazo mkubwa kwenye bidhaa **100% Original** na kutoa ushauri wa kitaalamu kabla ya kuuza (Skin consultation), tuligeuza duka letu dogo huko Banana kuwa kituo kinachoaminika na wanawake kutoka pande zote za Dar es Salaam na mikoa mingine.
+              Kwa kuweka mkazo mkubwa kwenye bidhaa 100% Original na kutoa ushauri wa kitaalamu kabla ya kuuza (Skin consultation), tuligeuza duka letu dogo huko Banana kuwa kituo kinachoaminika na wanawake kutoka pande zote za Dar es Salaam na mikoa mingine.
             </p>
             <p className="text-sm md:text-base text-text-muted leading-relaxed font-semibold text-gold">
               Leo, tunatoa huduma za skincare, bidhaa za nywele kama rasta za kiwango cha juu, mafuta ya kukuza nywele, na urembo wa accessories (cheni, shanga za kiuno).
