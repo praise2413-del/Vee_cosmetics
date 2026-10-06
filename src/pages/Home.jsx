@@ -265,7 +265,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                 loading="lazy"
                 className="rounded-xl object-cover w-full h-[300px] sm:h-[350px] md:h-[400px] aspect-square"
               />
-              <div className="absolute top-4 right-4 bg-gold text-white text-xs uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full shadow-md">
+              <div className="absolute bottom-4 right-4 bg-gold text-white text-xs uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full shadow-md">
                 Meet the Founder
               </div>
             </div>
