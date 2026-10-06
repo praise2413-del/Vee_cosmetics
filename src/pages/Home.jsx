@@ -52,13 +52,13 @@ export default function Home({ setActivePage, setCategoryFilter }) {
 
   return (
     <div className="overflow-hidden bg-bg-base transition-colors duration-300">
-      
+
       {/* 1. Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 md:px-8 border-b border-border-base/40">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Hero Content */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
@@ -68,20 +68,20 @@ export default function Home({ setActivePage, setCategoryFilter }) {
               <Sparkles className="h-4 w-4 text-gold animate-spin-slow" />
               <span>Premium Beauty Destination</span>
             </div>
-            
+
             <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight leading-none text-text-base">
               VEE <br />
               <span className="gold-gradient">COSMETICS</span>
             </h1>
-            
+
             <p className="font-serif text-xl md:text-2xl text-gold font-medium italic">
               “Your Complete Beauty Destination”
             </p>
-            
+
             <p className="text-base md:text-lg text-text-muted leading-relaxed max-w-xl">
               Karibu Vee Cosmetics, Banana, Dar es Salaam. Sisi ni kituo chako bora cha bidhaa halisi (original) za urembo, skincare, nywele, na urembo wa mwili. Tunakusaidia kukuza ujasiri wako kupitia bidhaa za kifahari na ushauri wa kitaalamu.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => handleCategoryClick('All')}
@@ -90,7 +90,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                 <span>Explore Collection</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
-              
+
               <a
                 href="https://wa.me/255659130030?text=Hello%20Vee%20Cosmetics,%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20beauty%20products."
                 target="_blank"
@@ -104,7 +104,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           </motion.div>
 
           {/* Hero Image / Premium Collage */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -112,12 +112,12 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           >
             {/* Elegant Background Glow */}
             <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-rose-primary/20 to-gold/15 blur-3xl opacity-75 dark:opacity-40"></div>
-            
+
             {/* Main Picture Frame with Gold Highlights */}
             <div className="relative p-3 bg-card-bg border-4 border-gold rounded-2xl shadow-2xl overflow-hidden max-w-md md:max-w-lg transform hover:scale-[1.02] transition-transform duration-500">
-              <img 
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&auto=format&fit=crop&q=80" 
-                alt="Vee Cosmetics Beauty Lifestyle" 
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&auto=format&fit=crop&q=80"
+                alt="Vee Cosmetics Beauty Lifestyle"
                 width="500"
                 height="450"
                 loading="eager"
@@ -146,7 +146,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -161,9 +161,9 @@ export default function Home({ setActivePage, setCategoryFilter }) {
               className="group relative cursor-pointer overflow-hidden rounded-2xl bg-card-bg border border-border-base hover:border-gold/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative aspect-square overflow-hidden bg-rose-light/20">
-                <img 
-                  src={cat.image} 
-                  alt={cat.label} 
+                <img
+                  src={cat.image}
+                  alt={cat.label}
                   width="300"
                   height="300"
                   loading="lazy"
@@ -231,7 +231,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                 desc: "Tupo tayari kukusikiliza na kukushauri bidhaa sahihi zinazoendana na ngozi au nywele zako."
               }
             ].map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-card-bg p-4 sm:p-8 rounded-2xl border border-border-base hover:border-gold/30 shadow-sm text-center space-y-3 sm:space-y-4 hover:shadow-md transition-all duration-300"
               >
@@ -253,13 +253,13 @@ export default function Home({ setActivePage, setCategoryFilter }) {
       {/* 4. Meet the Founder Section */}
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto border-b border-border-base/40">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Portrait Image */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative p-2 bg-card-bg border-2 border-gold rounded-2xl shadow-xl overflow-hidden max-w-sm">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=450&auto=format&fit=crop&q=80" 
-                alt="Founder of Vee Cosmetics" 
+              <img
+                src="founder2.jpeg"
+                alt="Founder of Vee Cosmetics"
                 width="400"
                 height="400"
                 loading="lazy"
@@ -277,11 +277,11 @@ export default function Home({ setActivePage, setCategoryFilter }) {
               The Heart Behind <span className="gold-gradient">Vee Cosmetics</span>
             </h2>
             <div className="h-[2px] w-20 bg-gold rounded-full"></div>
-            
+
             <p className="text-lg text-text-muted italic leading-relaxed font-serif">
               “Urembo si tu muonekano, bali ni kujiamini na amani ya moyoni. Lengo langu ni kumfanya kila mwanamke anayekanyaga Vee Cosmetics ajisikie kama malkia.”
             </p>
-            
+
             <p className="text-sm md:text-base text-text-muted leading-relaxed">
               Vee Cosmetics ilianzishwa kutokana na mapenzi makubwa ya kusaidia wanawake wa Tanzania kupata bidhaa halisi za skincare na urembo zinazoleta matokeo chanya. Tangu kuanzishwa kwetu Banana, Dar es Salaam, tumekuwa tukisaidia mamia ya wateja kutatua matatizo ya ngozi, nywele na kuwaongezea urembo wao wa asili.
             </p>
@@ -309,7 +309,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
       {/* 5. Beauty Tips Section */}
       <section className="py-24 px-4 md:px-8 bg-rose-light/10 dark:bg-rose-light/5 border-b border-border-base/40">
         <div className="max-w-7xl mx-auto">
-          
+
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div className="text-left space-y-3">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-text-base">
@@ -319,7 +319,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
                 Soma dondoo na ushauri wa kitaalamu kuhusu jinsi ya kulea ngozi na nywele zako.
               </p>
             </div>
-            
+
             <button
               onClick={() => {
                 setActivePage('about');
@@ -334,14 +334,14 @@ export default function Home({ setActivePage, setCategoryFilter }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {tips.map((tip) => (
-              <div 
+              <div
                 key={tip.id}
                 className="bg-card-bg rounded-2xl overflow-hidden border border-border-base shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full text-left"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-rose-light/20">
-                  <img 
-                    src={tip.image} 
-                    alt={tip.title} 
+                  <img
+                    src={tip.image}
+                    alt={tip.title}
                     width="400"
                     height="250"
                     loading="lazy"
@@ -383,11 +383,11 @@ export default function Home({ setActivePage, setCategoryFilter }) {
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-rose-primary/20 via-gold/10 to-rose-primary/25 border border-gold/30 p-8 md:p-16 text-center space-y-6">
           <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-rose-primary/15 to-gold/10 blur-3xl -z-10"></div>
-          
+
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-text-base">
             Visit Our Shop In <span className="gold-gradient">Banana, Dar es Salaam</span>
           </h2>
-          
+
           <p className="text-base md:text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
             Tutembelee leo upate nafasi ya kuona bidhaa zote kwa macho na kupata ushauri wa bure wa ngozi yako. Kama huwezi kufika, tunatuma mzigo popote Tanzania kwa uaminifu mkubwa.
           </p>
@@ -402,7 +402,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
             >
               Get Directions & Contact Info
             </button>
-            
+
             <a
               href="https://wa.me/255659130030?text=Hello%20Vee%20Cosmetics,%20I%20would%20like%20to%20order%20some%20products%20seen%20on%20your%20website."
               target="_blank"
