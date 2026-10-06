@@ -258,7 +258,7 @@ export default function Home({ setActivePage, setCategoryFilter }) {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative p-2 bg-card-bg border-2 border-gold rounded-2xl shadow-xl overflow-hidden max-w-sm">
               <img
-                src="founder1.jpeg"
+                src="founder2.jpeg"
                 alt="Founder of Vee Cosmetics"
                 width="400"
                 height="400"
